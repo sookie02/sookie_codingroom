@@ -1,0 +1,50 @@
+#백준 1920번 
+#https://wook-2124.tistory.com/451
+
+#시간초과는 list를 set으로 변경해서 풀었다~
+#set은 중복을 허용하지 않는 특징과 순서가 없다는 특징으로 인해 시간복잡도가 상수랍니다~
+
+import sys
+N=int(sys.stdin.readline())
+Nlist=set(map(int,sys.stdin.readline().split()))
+M=int(sys.stdin.readline())
+Mlist=list(map(int,sys.stdin.readline().split()))
+for i in range(0,M):
+  if Mlist[i] in Nlist:
+    print(1)
+  else:
+    print(0)
+
+
+#https://beginnerdeveloper-lit.tistory.com/10
+#백준 9237번 이장님 초대
+
+import sys
+N=int(sys.stdin.readline())
+date=list(map(int,sys.stdin.readline().split()))
+#list를 정렬하는 법
+#listname.sort()라고 하면 알아서 업데이트됨
+#오답사례(아래줄)
+#listname=listname.sort()
+date.sort(reverse=True)
+for i in range(N):
+  date[i]=date[i]+i+2
+#List에서 가장 큰 수를 뽑아내는 함수
+#max(listname)
+print(max(date))
+
+
+
+#https://www.acmicpc.net/status?user_id=shopper07066&problem_id=11170&from_mine=1
+#백준 11170번 0의 개수
+
+#느낀점
+#이렇게 한줄한줄 따로 입출력해도 되는구나..
+x = int(input())
+for i in range(x):
+    count = 0
+    a, b = map(int, input().split())
+    for i in range(a,b+1):
+      s=str(i)
+      count+=s.count("0")
+    print(count)
